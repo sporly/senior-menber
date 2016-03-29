@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录页</title>
+<link href="css/test.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="main mainp" >
+	<!---头部 S---->
+	<div class="header p-r">
+	    <div class="header-content clearfix">
+		     <div class="logobox fl">
+		     	<a href="javascript:;"></a><span class="txt">高级会员中心</span>
+		     </div> 
+		</div> 
+	</div>
+	<!---头部 E---->
+<!--内容区 S-->
+    <div class="content login-content">
+        <div class="login-contentimg"></div>
+     	<div class="login-main clearfix">
+     		<div class="fl"><img src="img/vip.png"></div>
+     		<div class="fr login-form">
+     			<div class="formtop"><img src="img/formtop.png"/></div>
+     			<form class="form-content">
+     				<div class="title">登录</div>
+     				<div class="input-wrap">
+     					<input type="text" placeholder="请输入钱富宝账号"/>
+     					<label class="err">hgh</label>
+     				</div>
+     				<div class="input-wrap">
+     					<input type="text" placeholder="请输入密码"/>
+     					<label class="err"></label>
+     				</div>
+     				<a class="login-btn">登录</a>
+     			</form>
+     			<div class="formbt"><img src="img/formbt.png"/></div>
+     		</div>
+     	</div>
+         
+    </div> 
+    <!--内容区 E-->
+    
+    <!--底部加载  S-->
+    <div class="login-footer">
+         <span>版权所有 © 深圳国控股权投资基金管理有限公司 </span>
+    </div>
+    <!--底部加载 E-->
+</div>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	/*$('button').bind({
+		 click:function(){$(this).css("background-color","#2796e5");},
+		mouseover:function(){$(this).css("background-color","#2ca8ff");},  
+		mouseout:function(){$(this).css("background-color","#0078ff");}  
+	});*/
+	$(function(){
+	 $('.login-content .login-btn').click(function(){
+	 	
+			var timeId = null;
+			//如果存在准备执行的定时器，立刻清除，只有当前停留时间大于500毫秒才执行
+			if(timeId){
+				clearTimeout(timeId);
+				timeId = null;
+			} 
+			//延迟半秒执行
+			timeId = setTimeout(function(){
+				
+				$('.login-btn').css('background-color','#d9d9d9');
+				$('.login-btn').html('<span>登录中<i>.</i><i>.</i><i>.</i></span>');
+			},500);
+		});
+		
+	/*$('.login-content input').focus(function(){
+		$(this).css('border-color','#0078ff');
+	});*/
+});
+</script>
+</body>
+</html>
